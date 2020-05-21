@@ -14,14 +14,14 @@ public class LabelFrame extends JFrame{
     
     public LabelFrame(){
         
-        super("Puro Nitro");
+        super("Keanu Reeves");
         setLayout( new FlowLayout());
         
-        Icon carrito = new ImageIcon( getClass().getResource("carrito.gif"));
+        Icon carrito = new ImageIcon ( getClass().getResource("keanureeves.gif"));
 
         
         gif = new JLabel();
-        gif.setText("Podemos observar que si quema cuh");
+        gif.setText("Wacha el paisaje homie");
         gif.setIcon(carrito);
         gif.setHorizontalTextPosition(SwingConstants.CENTER);
         gif.setVerticalTextPosition(SwingConstants.BOTTOM);

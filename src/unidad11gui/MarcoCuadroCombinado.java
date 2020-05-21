@@ -1,52 +1,54 @@
 package unidad11gui;
 // Fig. 11.21: MarcoCuadroCombinado.java
  // Uso de un objeto JComboBox para seleccionar una imagen a mostrar.
- import java.awt.FlowLayout;
- import java.awt.event.ItemListener;
- import java.awt.event.ItemEvent;
- import javax.swing.JFrame;
- import javax.swing.JLabel;
- import javax.swing.JComboBox;
- import javax.swing.Icon;
- import javax.swing.ImageIcon;
+import java.awt.FlowLayout;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import javax.swing.Icon;
+import javax.swing.ImageIcon; 
 
- public class MarcoCuadroCombinado extends JFrame
- {
- private JComboBox imagenesJComboBox; // cuadro combinado con los nombres de los iconos
- private JLabel etiqueta; // etiqueta para mostrar el icono seleccionado
+public class MarcoCuadroCombinado extends JFrame 
+{
+    private JComboBox imagenesJComboBox;
+    
+    private JLabel etiqueta; 
+    
+    private String nombres[] =
+            { "yoda.gif", "yoda1.gif", "babyoda.gif", "force.gif" };
+    
+     private Icon iconos[] = {
+new ImageIcon( getClass().getResource( nombres[ 0 ] ) ), 
+new ImageIcon( getClass().getResource( nombres[ 1 ] ) ), 
+new ImageIcon( getClass().getResource( nombres[ 2 ] ) ), 
+new ImageIcon( getClass().getResource( nombres[ 3 ] ) )};
 
- private String nombres[] =
- { “insecto1.gif”, “insecto2.gif”, “insectviaje.gif”, “insectanim.gif” };
- private Icon iconos[] = {
- new ImageIcon( getClass().getResource( nombres[ 0 ] ) ),
- new ImageIcon( getClass().getResource( nombres[ 1 ] ) ),
- new ImageIcon( getClass().getResource( nombres[ 2 ] ) ),
- new ImageIcon( getClass().getResource( nombres[ 3 ] ) ) };
-// El constructor de MarcoCuadroCombinado agrega un objeto JComboBox a JFrame
- public MarcoCuadroCombinado()
- {
- super( “Prueba de JComboBox” );
- setLayout( new FlowLayout() ); // establece el esquema del marco
+public MarcoCuadroCombinado()
+{
+super( "Prueba de JComboBox" );
+setLayout( new FlowLayout() ); 
 
- imagenesJComboBox = new JComboBox( nombres ); // establece JComboBox
- imagenesJComboBox.setMaximumRowCount( 3 ); // muestra tres filas
+imagenesJComboBox = new JComboBox( nombres );
+imagenesJComboBox.setMaximumRowCount( 3 ); 
 
- imagenesJComboBox.addItemListener(
- new ItemListener() // clase interna anónima
- {
- // maneja evento de JComboBox
- public void itemStateChanged( ItemEvent evento )
- {
- // determina si está seleccionada la casilla de verificación
- if ( evento.getStateChange() == ItemEvent.SELECTED )
- etiqueta.setIcon( iconos[
- imagenesJComboBox.getSelectedIndex() ] );
- } // fin del método itemStateChanged
- } // fin de la clase interna anónima
- ); // fin de la llamada a addItemListener
+imagenesJComboBox.addItemListener( 
+   new ItemListener()
+{
+   public void itemStateChanged( ItemEvent evento ) 
+{
+  if ( evento.getStateChange() == ItemEvent.SELECTED ) 
+ etiqueta.setIcon( iconos[ 
+imagenesJComboBox.getSelectedIndex() ] ); 
+}
+}
+);
 
- add( imagenesJComboBox ); // agrega cuadro combinado a JFrame
- etiqueta = new JLabel( iconos[ 0 ] ); // muestra el primer icono
- add( etiqueta ); // agrega etiqueta a JFrame
- } // fin del constructor de MarcoCuadroCombinado
-}// fin de la clase MarcoCuadroCombinado
+add( imagenesJComboBox ); 
+etiqueta = new JLabel( iconos[ 0 ] ); 
+add( etiqueta ); 
+}
+
+
+}
