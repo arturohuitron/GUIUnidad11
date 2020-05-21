@@ -11,7 +11,7 @@ import javax.swing.ImageIcon;
         
 public class LabelFrame extends JFrame{
     private final JLabel gif;
-    
+ 
     public LabelFrame(){
         
         super("Keanu Reeves");

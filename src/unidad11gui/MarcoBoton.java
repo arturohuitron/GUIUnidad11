@@ -20,14 +20,16 @@ import javax.swing.JOptionPane;
  {
  super( "Prueba de botones" );
  setLayout( new FlowLayout() ); // establece el esquema del marco
-
- botonJButtonSimple = new JButton( "Boton simple" ); // botón con texto
+ //tamaño de la ventana
+ setLocationRelativeTo(null);//posiciona la ventana en el centro
+ botonJButtonSimple = new JButton( "Boton Simple" ); // botón con texto
  add( botonJButtonSimple ); // agrega botonJButtonSimple a JFrame
 
- Icon insecto1 = new ImageIcon( getClass().getResource( "insecto1.gif" ) );
- Icon insecto2 = new ImageIcon( getClass().getResource( "insecto2.gif" ) );
- botonJButtonElegante = new JButton( "Boton elegante", insecto1 ); // establece la imagen
- botonJButtonElegante.setRolloverIcon( insecto2 ); // establece la imagen de sustitución
+ Icon bobesponja1 = new ImageIcon( getClass().getResource( "la pizza de don cangrejo.gif" ) );
+ Icon bobesponja2 = new ImageIcon( getClass().getResource( "episodioperdido.gif" ) );
+ botonJButtonElegante = new JButton( "Boton elegante", bobesponja1 ); // establece la imagen
+ botonJButtonElegante.setRolloverIcon( bobesponja2 ); // establece la imagen de sustitución
+ botonJButtonElegante.setSize(500,500);
  add( botonJButtonElegante ); // agrega botonJButtonElegante a JFrame
 
  // crea nuevo ManejadorBoton para manejar los eventos de botón
